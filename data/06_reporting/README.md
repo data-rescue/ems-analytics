@@ -1,0 +1,1 @@
+The 06_reporting folder is intended to store reporting data locally

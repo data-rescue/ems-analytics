@@ -1,0 +1,1 @@
+The 03_processed folder is intended to store processed data locally

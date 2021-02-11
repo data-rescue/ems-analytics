@@ -1,0 +1,1 @@
+The 02_intermediate folder is intended to store intermediate data locally

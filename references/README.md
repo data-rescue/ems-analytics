@@ -1,0 +1,1 @@
+The folder is intended to store reference documentation that helped with the project.

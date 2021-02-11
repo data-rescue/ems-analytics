@@ -1,0 +1,1 @@
+The 01_raw folder is intended to store raw data locally

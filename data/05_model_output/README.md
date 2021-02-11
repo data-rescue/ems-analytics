@@ -1,0 +1,1 @@
+The 05_model_output folder is intended to store mode output data locally
