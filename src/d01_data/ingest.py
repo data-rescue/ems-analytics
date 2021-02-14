@@ -1,4 +1,5 @@
 from pathlib import Path, PureWindowsPath
+import os
 from configparser import ConfigParser
 import json
 import datetime
@@ -35,9 +36,9 @@ from src.d00_utils import proj_utils
 ##      https://docs.python.org/3/library/configparser.html#supported-ini-file-structure
 ##      https://docs.python.org/3/library/configparser.html
 
-__project_root = proj_utils.get_project_file_path()
+_project_root = proj_utils.get_project_file_path()
 __config_file = PureWindowsPath(
-    Path(__project_root).joinpath('configs', 'conf_local.ini'))
+    Path(_project_root).joinpath('configs', 'conf_local.ini'))
 
 ## CREATE CONFIGURATION OBJECT
 ## 
@@ -47,24 +48,24 @@ __config = ConfigParser()
 __config.read(__config_file)
 
 ## DEFINE SESSION ATTRIBUTES AND BUCKET NAME
-__ACCESS_KEY = __config['AWS_SESSION']['ACCESS_KEY_ID']
-__SECRET_KEY = __config['AWS_SESSION']['SECRET_ACCESS_KEY']
-__REGION_NAME = __config['AWS_SESSION']['REGION_NAME']
-_BUCKET_NAME = __config['s3']['PRI_BUCKET_NAME']
+try:
+    __ACCESS_KEY = __config['AWS_SESSION']['ACCESS_KEY_ID']
+    __SECRET_KEY = __config['AWS_SESSION']['SECRET_ACCESS_KEY']
+    __REGION_NAME = __config['AWS_SESSION']['REGION_NAME']
+    _BUCKET_NAME = __config['s3']['PRI_BUCKET_NAME']
+except:
+    raise TypeError('CONFIG FILE PARAMETERS ERROR: Review config file and variable call outs.')
 
 ## CREATE SESSION OBJECT
-try:
-    _aws_session = boto3.Session(aws_access_key_id=__ACCESS_KEY,
-                                 aws_secret_access_key=__SECRET_KEY,
-                                 region_name=__REGION_NAME)
+_aws_session = boto3.Session(aws_access_key_id=__ACCESS_KEY,
+                             aws_secret_access_key=__SECRET_KEY,
+                             region_name=__REGION_NAME)
 
-except botocore.exceptions.ParamValidationError as error:
-    raise ValueError('The parameters you provided are incorredct: {}'.format(error))
-
-
+_valid_folders = ['01_raw', '02_intermediate',
+                  '03_processed', '04_models', '05_model_input', '06_reporting']
 class ProjectIngest:
         
-    def __init__(self, folder, file):
+    def __init__(self, sub_folder, file):
         """
         A class created to upload, download, and list objects from a remote s3 bucket into
         your project local data folders.
@@ -90,27 +91,38 @@ class ProjectIngest:
         -------
             remote_object_list()
         """
-        self.__valid_folders = ['01_raw', '02_intermediate',
-                                '03_processed', '04_models', '05_model_input', '06_reporting']
-
-        if type(folder) is not str: # Validate input 'folder' as string type
-            raise TypeError("Please enter a string value for the folder attribute.")
         
-        if folder not in self.__valid_folders: # Validate folder exist
-            raise TypeError("Please check your folder selection. Valid options are "\
+
+        # Validation of input parameters for class generation
+        if type(sub_folder) is not str: # Validate input 'folder' as string type
+            raise TypeError("Class Creation: Please enter a string value for the folder attribute.")
+        
+        if sub_folder not in _valid_folders: # Validate folder exist
+            raise TypeError("Class Creation: Please check your folder selection. Valid options are "\
                             "01_raw, 02_intermediate, 03_processed, 04_models, "\
                             "05_model_input, and 06_reporting")
         
         if type(file) is not str: # Validate input 'file' as string type
-            raise TypeError("Please enter a string value for the file attribute")
-
-        self.__folder = folder
+            raise TypeError("Class Creation: Please enter a string value for the file attribute")
+        
+        # Assignment of validated input parameters to the instance object
+        self.__sub_folder = sub_folder
         self.__file = file
-        
-        
-        
-        
 
+        # Internal Class Variables
+        self.__project_name = 'ems-analytics'
+
+        self.__ingest_folder = 'data'
+
+        self.__local_file_path = PureWindowsPath(
+            Path(_project_root).joinpath(self.__project_name,
+                                         self.__ingest_folder,
+                                         self.__sub_folder,
+                                         self.__file))
+
+        self.__s3_key = (self.__sub_folder + "/" + self.__file)
+        
+        
     def remote_object_list(self):
         """
         The method intends to provide a list of the files/objects that
@@ -120,23 +132,74 @@ class ProjectIngest:
         This method will use the Class attribute folder to provide the list
         of objects stored in the specific s3 folder.        
         """
+        
         try:
-            __s3client=_aws_session.client('s3')       
-            __response = __s3client.list_objects(Bucket=_BUCKET_NAME, Prefix=self.__folder)
-        except:
-            print("S3 client creation error for ")
+            __response = _aws_session.client('s3').list_objects(
+                Bucket=_BUCKET_NAME, Prefix=self.__sub_folder)
+
+        except botocore.exceptions.ParamValidationError as error:
+            raise ValueError(
+                'The parameters you provided are incorredct: {}'.format(error))
+
         __object_list = list()
 
         for item in __response['Contents']:
-            if item['Key'] != str(self.__folder + "/"):
+            if item['Key'] != str(self.__sub_folder + "/"):
                 __object_list.append(item['Key'])
 
         return(__object_list)
-       
 
+    def local_download(self):
+        """
+        Note 1: Need to document
+        Note 2: After initial assessment of the raw data, we could refactor to include an efficient indexing
+        Note 3: Instead of generic download, I will refactor to intentional downloads (e.g., local_download_ems_raw())
+        """
+        
+        if not os.path.exists(self.__local_file_path):
+            try:
+                __response = _aws_session.client('s3').download_file(
+                    Bucket=_BUCKET_NAME, 
+                    Key=str(self.__s3_key),
+                    Filename=str(self.__local_file_path))
+            
+            except botocore.exceptions.ClientError as error:
+                if error.response['Error']['Code'] == "404":
+                    print("The {} file does not exist in the {} folder at the S3 bucket.".format(self.__file, self.__sub_folder))
+                else:
+                    raise
+        else:
+            print('{} file already exist in your local {} folder'.format(self.__file, self.__sub_folder))
+
+"""
+#### CODE IS STILL WORK IN PROGRESS
+    def __s3_key_exist(self):
+        s3 = boto3.resource('s3')
+
+        try:
+            s3.Object(Bucket=_BUCKET_NAME,
+                      Key=str(self.__s3_key)).load()
+
+    def remote_upload(self):
+        pass
+
+    ###### ANOTHER POSIBLE APPROCH UPLOAD
+    def upload_file(folder, file, s3):
+        file_path = Path.cwd().parents[0].joinpath(folder, file)
+    remote_path = Path.joinpath(folder, file)
+
+    try:
+        s3.Bucket(BUCKET_NAME).upload_file(file_path, remote_path)
+    except:
+        print('upload error')
+"""
 
 #ingest = ProjectIngest('01_raw', '20210213-ems-raw.xlsx')
 
-ingest = ProjectIngest('01_raw', '20210213-ems-raw.xlsx')
+#ingest = ProjectIngest('01_raw', '20210213-ems-raw.xlsx')
 
-ingest.remote_object_list()
+#ingest.remote_object_list()
+
+ingest = ProjectIngest('01_raw', '20210213-admin-01-raw-test1.txt')
+
+ingest.local_download()
