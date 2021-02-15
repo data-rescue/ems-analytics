@@ -63,6 +63,8 @@ _aws_session = boto3.Session(aws_access_key_id=__ACCESS_KEY,
 
 _valid_folders = ['01_raw', '02_intermediate',
                   '03_processed', '04_models', '05_model_input', '06_reporting']
+
+_valid_file_extension = ['.csv', '.xlsx']
 class ProjectIngest:
         
     def __init__(self, sub_folder, file):
@@ -95,15 +97,18 @@ class ProjectIngest:
 
         # Validation of input parameters for class generation
         if type(sub_folder) is not str: # Validate input 'folder' as string type
-            raise TypeError("Class Creation: Please enter a string value for the folder attribute.")
+            raise TypeError("Instance Creation: Please enter a string value for the folder attribute.")
         
         if sub_folder not in _valid_folders: # Validate folder exist
-            raise TypeError("Class Creation: Please check your folder selection. Valid options are "\
+            raise TypeError("Instance Creation: Please check your folder selection. Valid options are "\
                             "01_raw, 02_intermediate, 03_processed, 04_models, "\
                             "05_model_input, and 06_reporting")
         
         if type(file) is not str: # Validate input 'file' as string type
-            raise TypeError("Class Creation: Please enter a string value for the file attribute")
+            raise TypeError("Instance Creation: Please enter a string value for the file attribute")
+
+        if Path(file).suffix not in _valid_file_extension:
+            raise TypeError("Instance Creation: Please validate that '{}' have a valid file extension".format(file))
         
         # Assignment of validated input parameters to the instance object
         self.__sub_folder = sub_folder
@@ -149,11 +154,20 @@ class ProjectIngest:
 
         return(__object_list)
 
-    def local_download(self):
+    def local_download_gen(self):
         """
-        Note 1: Need to document
-        Note 2: After initial assessment of the raw data, we could refactor to include an efficient indexing
-        Note 3: Instead of generic download, I will refactor to intentional downloads (e.g., local_download_ems_raw())
+        The local_download_gen() method provides a flexible download experience, this method 
+        will take the ProjectIngest class attributes <folder> and <file> to ingest an s3 object 
+        to the appropriate project folder. S3 logical folder and project folder structure are
+        designed to be equals.
+
+        Properties:
+        -----------
+            No additional properties required
+        
+        Return
+        ------
+            S3 object / data file (e.g., raw.csv)
         """
         
         if not os.path.exists(self.__local_file_path):
@@ -171,35 +185,68 @@ class ProjectIngest:
         else:
             print('{} file already exist in your local {} folder'.format(self.__file, self.__sub_folder))
 
-"""
-#### CODE IS STILL WORK IN PROGRESS
-    def __s3_key_exist(self):
-        s3 = boto3.resource('s3')
+    def s3_key_exist(self):
+        """
+        The s3_key_exist() method is used to validate if an specific s3 key already exist in the s3
+        bucket. An s3 key is just the logical path/folder structure used in the s3 bucket. For example,
+        01_raw\20210213-admin-01-raw-test.txt is a fully defined key.
 
+        Properties:
+        -----------
+            No additional properties required
+
+        Return
+        ------
+            Boolean : Returns True or False depending whether the key exist or not.
+        """
+        
         try:
-            s3.Object(Bucket=_BUCKET_NAME,
-                      Key=str(self.__s3_key)).load()
+            _aws_session.resource('s3').Object(bucket_name=_BUCKET_NAME,
+                                               key=str(self.__s3_key)).load()
+
+        except botocore.exceptions.ClientError as error:
+
+            if error.response['Error']['Code'] == "404":
+                # The object does not exist
+                return False
+                
+            else:
+                # Something else has gone wrong.
+                raise
+        else:                        
+            # The object does exist
+            return True
 
     def remote_upload(self):
-        pass
+        """
+        The remote_upload() method will upload your local project data file to the S3 bucket. Should
+        be only used when the data model is ready for test and validation by another team member.
 
-    ###### ANOTHER POSIBLE APPROCH UPLOAD
-    def upload_file(folder, file, s3):
-        file_path = Path.cwd().parents[0].joinpath(folder, file)
-    remote_path = Path.joinpath(folder, file)
+        Properties:
+        -----------
+            No additional properties required
+        
+        Return
+        ------
+            S3 object / data file (e.g., raw.csv)        
+        """
+        if self.s3_key_exist():
+            # return message that a file with that name exist
+            print('The {} file already exist in the S3 bucket under the key {}'.format(
+                self.__file, self.__s3_key))
+        else:
+            # create the session and upload the file
+            try:
+                _aws_session.resource('s3').meta.client.upload_file(Filename=str(self.__local_file_path),
+                                                                    Bucket=_BUCKET_NAME,
+                                                                    Key=str(self.__s3_key))
+            except botocore.exceptions.ClientError as error:
+                raise
 
-    try:
-        s3.Bucket(BUCKET_NAME).upload_file(file_path, remote_path)
-    except:
-        print('upload error')
 """
-
-#ingest = ProjectIngest('01_raw', '20210213-ems-raw.xlsx')
-
-#ingest = ProjectIngest('01_raw', '20210213-ems-raw.xlsx')
-
-#ingest.remote_object_list()
-
-ingest = ProjectIngest('01_raw', '20210213-admin-01-raw-test1.txt')
-
-ingest.local_download()
+    FUTURE WORK:
+        Considering the idea of creating unique raw ingest files that takes the raw .xlsx file and:
+        1. split each workshee of the work book in its separate csv modules
+        2. validate each of the data modules created for proper dtype for each column
+        3. Ingest the validated dtype columns and data module to the 01_raw folder 
+"""
