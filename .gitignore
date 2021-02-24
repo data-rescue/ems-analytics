@@ -21,6 +21,7 @@
 # Datasets
 *.xlsx
 *.csv
+*.html
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,r,jupyternotebooks,vscode,pycharm,jetbrains
