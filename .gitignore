@@ -22,6 +22,7 @@
 *.xlsx
 *.csv
 *.html
+*.parquet
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,r,jupyternotebooks,vscode,pycharm,jetbrains

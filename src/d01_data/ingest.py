@@ -64,7 +64,7 @@ _aws_session = boto3.Session(aws_access_key_id=__ACCESS_KEY,
 _valid_folders = ['01_raw', '02_intermediate',
                   '03_processed', '04_models', '05_model_input', '06_reporting']
 
-_valid_file_extension = ['.csv', '.xlsx', '.html']
+_valid_file_extension = ['.csv', '.xlsx', '.html', '.parquet']
 class ProjectIngest:
         
     def __init__(self, sub_folder, file):
