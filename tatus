@@ -1,0 +1,755 @@
+[33mcommit f605ebffbe1e652b1a862987e5790b57e52ff468[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: f345621 1efa009
+Author: Angel Sierra <asierra-eng@users.noreply.github.com>
+Date:   Tue Mar 16 20:29:36 2021 -0400
+
+    Merge pull request #44 from data-rescue/ans
+    
+    Update main with new files from ANS branch
+
+[33mcommit f345621a97c9f968856b4cccc26bd2d5990d99d3[m
+Merge: cee2e66 a2d3181
+Author: emclaug <emclaug@masonlive.gmu.edu>
+Date:   Sun Mar 14 05:11:52 2021 -0400
+
+    Merge pull request #49 from data-rescue/eem
+    
+    fixing typo and changed df names in notebook
+
+[33mcommit a2d31813c94f70902707d34b3fa345691b795ff1[m[33m ([m[1;31morigin/eem[m[33m)[m
+Author: elizabeth <emclaug@masonlive.gmu.edu>
+Date:   Sun Mar 14 05:10:38 2021 -0400
+
+    fixing typo and changed df names in notebook
+
+[33mcommit cee2e6690c891b0deab0785c3c693a6cf8a18a0f[m
+Merge: 9bd44a5 aded732
+Author: emclaug <emclaug@masonlive.gmu.edu>
+Date:   Sat Mar 13 21:19:01 2021 -0500
+
+    Merge pull request #48 from data-rescue/eem
+    
+    patients procedures evaluation notebook update
+
+[33mcommit aded732ee12c809fbb8216cfff368125205b1158[m
+Author: elizabeth <emclaug@masonlive.gmu.edu>
+Date:   Sat Mar 13 21:17:23 2021 -0500
+
+    updates to patients and procedures evaluation using hexbin, etc.
+
+[33mcommit 4e6be309d92f0b896dbba6f5248625673a8a9e41[m
+Merge: 481c570 9bd44a5
+Author: emclaug <emclaug@masonlive.gmu.edu>
+Date:   Sat Mar 13 18:56:01 2021 -0500
+
+    Merge pull request #47 from data-rescue/main
+    
+    pull main into eem
+
+[33mcommit 9bd44a593fdfc5b4f00ee9119e50ec8300fa4000[m
+Merge: d0e7ec4 481c570
+Author: emclaug <emclaug@masonlive.gmu.edu>
+Date:   Sat Mar 13 18:53:31 2021 -0500
+
+    Merge pull request #46 from data-rescue/eem
+    
+    hex binning and descriptive statistics for tenure and procedures
+
+[33mcommit 481c5702ee31fa69e7643fb5185dbb0ce9697abe[m
+Author: elizabeth <emclaug@masonlive.gmu.edu>
+Date:   Sat Mar 13 18:51:40 2021 -0500
+
+    eem - hex binning and descriptive statistics for tenure and procedures
+
+[33mcommit d0e7ec46dfcff2b1ce3a0b461ec918079e82d72d[m
+Merge: 9510bc4 412d0bd
+Author: jgauntt-gmu <78328117+jgauntt-gmu@users.noreply.github.com>
+Date:   Sat Mar 13 16:27:25 2021 -0500
+
+    Merge pull request #45 from data-rescue/jdg
+    
+    Add initial version of MedicationsVsGender analysis
+
+[33mcommit 412d0bd42e899f88962070a2add739446f338f09[m
+Author: jgauntt-gmu <jgauntt@masonlive.gmu.edu>
+Date:   Sat Mar 13 16:22:46 2021 -0500
+
+    Add initial version of MedicationsVsGender analysis
+
+[33mcommit cf03a7ee91015358628e31b912b3993c3d9941d0[m
+Merge: d4c47b7 9510bc4
+Author: jgauntt-gmu <jgauntt@masonlive.gmu.edu>
+Date:   Thu Mar 11 19:02:24 2021 -0500
+
+    Merge branch 'jdg' of https://github.com/data-rescue/ems-analytics into jdg
+
+[33mcommit 1efa00980600a9ded91f404e2c01dfdf9c791780[m[33m ([m[1;31morigin/ans[m[33m)[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Wed Mar 10 21:45:25 2021 -0500
+
+    Update environment requirements to include the matplotlib-venn library
+
+[33mcommit f892e253e4622aee714e729e42f1453fff322245[m
+Merge: c48da71 1e7c108
+Author: Angel <asierra.me@gmail.com>
+Date:   Wed Mar 10 18:56:07 2021 -0500
+
+    Merge branch 'ans' of github.com:data-rescue/ems-analytics into ans
+
+[33mcommit c48da71ccca22cc01c6b0da4b1711b400b51d3ba[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Wed Mar 10 18:52:59 2021 -0500
+
+    Venn Analysis Report
+    
+    Add a notebook that contains the Venn analysis report and the
+    supporting python module 'VennAnalysisReport'.
+
+[33mcommit 583bc3e52cda95cad4f4887bcd2bea4dd359d2e2[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Wed Mar 10 18:49:36 2021 -0500
+
+    Convert Datasets to Parquet
+    
+    The notebook shows how the file were created with shape validation and
+    a set of scripts that we may re-use to read the files locally.
+
+[33mcommit 9510bc4cda9d315e0566908c75eccdc9a9a330ab[m[33m ([m[1;31morigin/jdg[m[33m)[m
+Merge: a304b20 2b8e6e9
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Tue Mar 9 23:34:48 2021 -0500
+
+    Merge pull request #43 from data-rescue/mdl
+    
+    Add Intermediate Med+Pat for Analytics
+
+[33mcommit 2b8e6e96c5dbf3d2bb73364643b03f7bdf73a331[m[33m ([m[1;31morigin/mdl[m[33m, [m[1;32mmdl[m[33m)[m
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Tue Mar 9 23:34:19 2021 -0500
+
+    Add Intermediate Med+Pat for Analytics
+
+[33mcommit a304b2040303c09458f4ab556bbb8032826314a4[m
+Merge: 8a7b3b6 4c9efb5
+Author: emclaug <emclaug@masonlive.gmu.edu>
+Date:   Tue Mar 9 22:50:40 2021 -0500
+
+    Merge pull request #42 from data-rescue/eem
+    
+    add hexbinning test notebook
+
+[33mcommit 4c9efb5a1052e69a26e0ee39f189a1554be8d899[m
+Author: elizabeth <emclaug@masonlive.gmu.edu>
+Date:   Tue Mar 9 22:46:58 2021 -0500
+
+    add hexbinning test notebook
+
+[33mcommit 8a7b3b6302923b3e1a82f546c20f98b11f64b666[m
+Merge: 29ded0c 0e10df7
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Tue Mar 9 14:27:58 2021 -0500
+
+    Merge pull request #41 from data-rescue/mdl
+    
+    Mdl
+
+[33mcommit 0e10df723ffa4bf66e349fda12819f70633b7151[m
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Tue Mar 9 14:27:23 2021 -0500
+
+    add intermediate dataset procedures+patients
+
+[33mcommit 1e7c10822d25b402978f5544e90a73bad511a41f[m
+Merge: 342d14d 29ded0c
+Author: Angel Sierra <asierra-eng@users.noreply.github.com>
+Date:   Mon Mar 8 16:24:40 2021 -0500
+
+    Merge pull request #40 from data-rescue/main
+    
+    Updating local branch ans with main
+
+[33mcommit 053f470049a84607b085262f1c0be1efa34a31d3[m
+Merge: aba7ce6 29ded0c
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Mon Mar 8 12:21:13 2021 -0500
+
+    Merge pull request #39 from data-rescue/main
+    
+    pull request to update mdl branch
+
+[33mcommit 7eaa7010cbf62c2c8ee8556801db9c08d93bb2b3[m
+Merge: 8a54962 29ded0c
+Author: emclaug <emclaug@masonlive.gmu.edu>
+Date:   Sun Mar 7 19:08:51 2021 -0500
+
+    Merge pull request #38 from data-rescue/main
+    
+    eem pull request
+
+[33mcommit d4c47b7abd5fe1c0767aec5e599971ace01f0e8a[m
+Merge: aba7ce6 29ded0c
+Author: jgauntt-gmu <78328117+jgauntt-gmu@users.noreply.github.com>
+Date:   Sat Mar 6 12:24:10 2021 -0500
+
+    Merge pull request #37 from data-rescue/main
+    
+    Pulling Mike's 20210305-mdl-mrm-daen690-IntermediateDataset-Patients.ipynb to jdg
+
+[33mcommit 29ded0c7e4f229701bea2d73bb76cc4115dfd546[m
+Merge: aba7ce6 418d1b7
+Author: Mike McRae <78388302+mmcrae2@users.noreply.github.com>
+Date:   Fri Mar 5 21:07:44 2021 -0500
+
+    Merge pull request #36 from data-rescue/mrm
+    
+    Created new Patients intermediate data script based on Mark's original
+
+[33mcommit 418d1b74aba687ac5259b67c72e4618c6495c9b2[m
+Author: M. McRae <mmcrae2@gmu.edu>
+Date:   Fri Mar 5 21:04:07 2021 -0500
+
+    Edited Marks notebook to include removal of duplicates and merging role info
+
+[33mcommit 11ff4194cce730bde8010c872103708f966ea7ab[m
+Merge: aae37f9 aba7ce6
+Author: Mike McRae <78388302+mmcrae2@users.noreply.github.com>
+Date:   Fri Mar 5 12:03:46 2021 -0500
+
+    Merge pull request #35 from data-rescue/main
+    
+    Grabbing updates from Main
+
+[33mcommit aba7ce6c703d7560a3d1018fbecad0d065181bbf[m[33m ([m[1;32mjdg[m[33m)[m
+Merge: c2a94a9 d1b357e
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Thu Mar 4 23:53:21 2021 -0500
+
+    Merge pull request #34 from data-rescue/mdl
+    
+    Mdl
+
+[33mcommit d1b357e8478f5a8e2805751ef2a68398ceaaa8e6[m
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Thu Mar 4 23:52:35 2021 -0500
+
+    Add intermediate Patients dataset
+
+[33mcommit a58f2baa6688983d2349cafe8d746ef3c2abeaab[m
+Merge: f973296 c2a94a9
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Sun Feb 28 12:52:26 2021 -0500
+
+    Merge pull request #33 from data-rescue/main
+    
+    pull request from main
+
+[33mcommit c2a94a951cb61ebfc566c8d859368fa5902cbd87[m
+Merge: f973296 4cd46e6
+Author: Anup-Upadhyaya <78397792+Anup-Upadhyaya@users.noreply.github.com>
+Date:   Sun Feb 28 10:06:35 2021 -0500
+
+    Merge pull request #31 from data-rescue/jdg
+    
+    Jdg
+
+[33mcommit 4cd46e6c48b3dd5ef1fc8cbf562a70578835320f[m
+Merge: f973296 68a5e0f
+Author: Anup-Upadhyaya <78397792+Anup-Upadhyaya@users.noreply.github.com>
+Date:   Sun Feb 28 10:04:34 2021 -0500
+
+    Merge pull request #29 from data-rescue/au
+    
+    Added Data Quality Assessment notebook
+
+[33mcommit f973296c0654f3d1146d07c9d9d4b52f814fec90[m
+Merge: 30867a0 9b77e71
+Author: jgauntt-gmu <78328117+jgauntt-gmu@users.noreply.github.com>
+Date:   Fri Feb 26 18:59:44 2021 -0500
+
+    Merge pull request #28 from data-rescue/jdg
+    
+    Update jdg-descriptive-statistics-patients
+
+[33mcommit 9b77e71de52dfb173ba59aa867ea1381f8cf7050[m
+Author: jgauntt-gmu <jgauntt@masonlive.gmu.edu>
+Date:   Fri Feb 26 18:55:05 2021 -0500
+
+    Update jdg-descriptive-statistics-patients to display NULL instead of nan in pie charts; archived older version of script
+
+[33mcommit aae37f92a76c4acf957110192ddfcbfe77840969[m
+Merge: d3c5c3f 30867a0
+Author: Mike McRae <78388302+mmcrae2@users.noreply.github.com>
+Date:   Fri Feb 26 15:45:56 2021 -0500
+
+    Merge pull request #27 from data-rescue/main
+    
+    Pulling latest updates from main
+
+[33mcommit 30867a03f083d7a0bb8e21fb7b7bf62cdc702730[m
+Merge: 740f57e 83b87f0
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Fri Feb 26 08:40:39 2021 -0500
+
+    Merge pull request #26 from data-rescue/mdl
+    
+    Add Generate FQ1 Dataset Script
+
+[33mcommit 83b87f0f97ffd8cd9bbdc69fab0e253e3a5c37fb[m
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Fri Feb 26 08:39:04 2021 -0500
+
+    Add Generate FQ1 Dataset Script
+    
+    Add Generate FQ1 Dataset Script
+
+[33mcommit 740f57e03a069f1f6e26f8e240776e1b8e1ae348[m
+Merge: 41f95b2 1603b23
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Thu Feb 25 16:50:37 2021 -0500
+
+    Merge pull request #25 from data-rescue/mdl
+    
+    workshop merge
+
+[33mcommit 1603b2304360948d0b9f17103206e4ad0d87cb31[m
+Author: MarkL <mlee78@masonlive.gmu.edu>
+Date:   Thu Feb 25 16:46:36 2021 -0500
+
+    remove changes from git tracking
+
+[33mcommit d40fda59cd06bce200e2af786aa24a205c199db8[m
+Author: MarkL <mlee78@masonlive.gmu.edu>
+Date:   Thu Feb 25 16:45:28 2021 -0500
+
+    delete test notebook
+
+[33mcommit 149a368f0e44020c09e2aabb4ab5abd95edce6f9[m
+Author: MarkL <mlee78@masonlive.gmu.edu>
+Date:   Thu Feb 25 16:38:30 2021 -0500
+
+    add mark-test notebook
+
+[33mcommit 63c81c88ab8162716bfdcf3682a84fbe8ed6fc43[m
+Merge: 25244af 41f95b2
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Thu Feb 25 15:34:07 2021 -0500
+
+    Merge pull request #24 from data-rescue/main
+    
+    Update mdl branch from main
+
+[33mcommit 41f95b207bd9660ea8c581d37df927297c22c97a[m
+Merge: 8d4552d d3c5c3f
+Author: Mike McRae <78388302+mmcrae2@users.noreply.github.com>
+Date:   Thu Feb 25 14:25:43 2021 -0500
+
+    Merge pull request #23 from data-rescue/mrm
+    
+    Mrm
+
+[33mcommit d3c5c3f25b5d2f88538565bc94feeb7740824f8a[m
+Author: M. McRae <mmcrae2@gmu.edu>
+Date:   Thu Feb 25 14:23:24 2021 -0500
+
+    Removing test file
+
+[33mcommit bd828338d66d89c816b34e432f21ac675a61fd26[m
+Author: M. McRae <mmcrae2@gmu.edu>
+Date:   Thu Feb 25 14:15:37 2021 -0500
+
+    Add parquet data ingest notebook
+
+[33mcommit 109166e224afa3903a98f412cfe937d4741d1bba[m
+Merge: 5d11ce5 8d4552d
+Author: Mike McRae <78388302+mmcrae2@users.noreply.github.com>
+Date:   Thu Feb 25 13:41:44 2021 -0500
+
+    Merge pull request #22 from data-rescue/main
+    
+    Parquet update
+
+[33mcommit 8d4552d49d4cadd1394643a3d9b30dc1a570aa04[m
+Merge: 5d11ce5 342d14d
+Author: Mike McRae <78388302+mmcrae2@users.noreply.github.com>
+Date:   Thu Feb 25 12:58:45 2021 -0500
+
+    Merge pull request #21 from data-rescue/ans
+    
+    include parquet capability
+    Approved merge per workshop with Angel
+
+[33mcommit 342d14dc6c562e5c3c9d4ac5a17e7a4aa9af5bd9[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Thu Feb 25 02:53:40 2021 -0500
+
+    Add a notebook to convert patients data set v3 to parquet
+
+[33mcommit 4ab429e4e14451d6377a7c41050c7a58f4559be6[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Thu Feb 25 02:51:42 2021 -0500
+
+    Update .gitignore to include parquet files in the ignore list
+
+[33mcommit c0afdac9c3b442e0dc88137e24894df4c3e085c3[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Thu Feb 25 02:47:42 2021 -0500
+
+    Update virtual environment requirements to add PyArrow and its dependencies
+
+[33mcommit 0b347b54f306b182ca76549d0a22334cb29f9fde[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Thu Feb 25 02:40:31 2021 -0500
+
+    Include parquet files in the ingest module
+
+[33mcommit 5d11ce51c800cf1fcfcee17ce18c1f247c98d993[m
+Merge: 81bb014 85eb9bc
+Author: Angel Sierra <asierra-eng@users.noreply.github.com>
+Date:   Wed Feb 24 20:06:51 2021 -0500
+
+    Merge pull request #20 from data-rescue/jdg
+    
+    Add 20210224-jdg-descriptive-statistics-patients
+
+[33mcommit 81bb01419a87a3db0e6bd7a433e32cffb04ef643[m
+Merge: 43c8b64 27800c7
+Author: jgauntt-gmu <78328117+jgauntt-gmu@users.noreply.github.com>
+Date:   Wed Feb 24 18:41:36 2021 -0500
+
+    Merge pull request #19 from data-rescue/ans
+    
+    ans branch pull request for .gitignore, ingest.py, notebooks, and emspe_requirements.yml
+
+[33mcommit 85eb9bc9b703fc5d6d8864ed001e12fa48a53144[m
+Author: jgauntt-gmu <jgauntt@masonlive.gmu.edu>
+Date:   Wed Feb 24 18:33:41 2021 -0500
+
+    Removing obsolete jdg-descriptive-statistics-patients
+
+[33mcommit ffebf8b5b133d066842b89d2656a116478f9809a[m
+Author: jgauntt-gmu <jgauntt@masonlive.gmu.edu>
+Date:   Wed Feb 24 18:28:16 2021 -0500
+
+    Adding 20210224-jdg-descriptive-statistics-patients.ipynb
+
+[33mcommit 27800c7466de8251fcc0256f8746031475ea85dc[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Wed Feb 24 17:44:37 2021 -0500
+
+    Update libraries for the virtual environment, include openpyxl for excel file handling and include pandasql
+
+[33mcommit 88fa6267c1425e8cff2fcfc8ad00c95280e874b7[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Wed Feb 24 17:19:45 2021 -0500
+
+    Add notebook that generates a profiling report for the person dataset.
+
+[33mcommit c5a457f8a08635844da19ac1e30f27596aee35c7[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Wed Feb 24 17:17:27 2021 -0500
+
+    Add html files to the ignore list.
+
+[33mcommit 9a35237fac6a6d08568ca7d84f4e056ef925c61e[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Wed Feb 24 17:10:18 2021 -0500
+
+    Updated ingest to accept upload and download of HTML files
+
+[33mcommit e74d23efb69ff3bbd19441d9fd9df62dadca5d8c[m
+Merge: 02674d4 43c8b64
+Author: Angel Sierra <asierra-eng@users.noreply.github.com>
+Date:   Tue Feb 23 13:03:55 2021 -0500
+
+    Merge pull request #18 from data-rescue/main
+    
+    Updating 'ans' branch
+
+[33mcommit 28f2b7e955aa23d6a554ca8fe5fed29d4adcca12[m
+Author: jgauntt-gmu <jgauntt@masonlive.gmu.edu>
+Date:   Sun Feb 21 20:17:05 2021 -0500
+
+    Uploading initial version of descriptive-statistics-patients
+
+[33mcommit 43c8b64567471fec8ad631017d40260ffc259a06[m
+Merge: 25244af 97f72ef
+Author: jgauntt-gmu <78328117+jgauntt-gmu@users.noreply.github.com>
+Date:   Sun Feb 21 17:30:49 2021 -0500
+
+    Merge pull request #17 from data-rescue/jdg
+    
+    Remove hello world scripts and create archive folder
+
+[33mcommit 97f72efdfa47e617cc9b42639d525568264b4c9a[m
+Author: jgauntt-gmu <jgauntt@masonlive.gmu.edu>
+Date:   Sun Feb 21 17:29:06 2021 -0500
+
+    Remove hello world and create archive folder
+
+[33mcommit 2b4cfd9e2d9349ed5f41420bb8fcea0fd2ffd944[m
+Merge: c354685 25244af
+Author: jgauntt-gmu <78328117+jgauntt-gmu@users.noreply.github.com>
+Date:   Sun Feb 21 17:19:12 2021 -0500
+
+    Merge pull request #16 from data-rescue/main
+    
+    Pull current main branch into jdg
+
+[33mcommit 8a54962c4dc7506ec10796c5bc4bb70f357f00be[m
+Merge: d25fc1c 25244af
+Author: emclaug <emclaug@masonlive.gmu.edu>
+Date:   Sun Feb 21 16:03:45 2021 -0500
+
+    Merge pull request #15 from data-rescue/main
+    
+    update eem
+
+[33mcommit 68a5e0fd1689f5b39a59e8207117ccc1b6e75fd9[m
+Author: anup <aupadhy@masonlive.gmu.edu>
+Date:   Sun Feb 21 16:01:08 2021 -0500
+
+    Added Data Quality Assessment notebook
+
+[33mcommit 25244af53c78a096ca38cb2bee471b5d14011bb0[m
+Merge: 310d412 9e39561
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Sat Feb 20 15:45:07 2021 -0500
+
+    Merge pull request #14 from data-rescue/mdl
+    
+    Mdl
+
+[33mcommit 9e395617987781da805ca9dbd412a88ea3f454fd[m
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Sat Feb 20 15:41:48 2021 -0500
+
+    Uploading ERD image to display in Notebook
+
+[33mcommit 1a481fc4037f990872dc7eeb7f53c2bfbcb9597d[m
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Sat Feb 20 15:40:14 2021 -0500
+
+    Adding folder to store images
+
+[33mcommit 85ecd3aa6aec1e39a106b75e316e6afac3c81933[m
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Sat Feb 20 15:34:55 2021 -0500
+
+    Uploading Focus Qs 1 & 2 data subset analyses
+    
+    Uploading analyses to determine data subsets for Focus Questions 1 & 2
+
+[33mcommit e459046ba57a67b1c88e7ec5cabae9833d36139b[m
+Author: leem88 <78324519+leem88@users.noreply.github.com>
+Date:   Fri Feb 19 19:44:03 2021 -0500
+
+    Uploading Left Outer Join Analysis
+    
+    Uploading left outer join analysis to research rows in Medicines and Procedures but not in Patients.
+
+[33mcommit 310d412d978966ca142912798e304778fd3d7239[m
+Merge: 2fefead c354685
+Author: jgauntt-gmu <78328117+jgauntt-gmu@users.noreply.github.com>
+Date:   Thu Feb 18 19:21:43 2021 -0500
+
+    Merge pull request #13 from data-rescue/jdg
+    
+    Update descriptive-statistics for duplicate Boolean and bar charts
+
+[33mcommit c3546855188400142b5f59303bd297e0ba446f9d[m
+Author: jgauntt-gmu <jgauntt@masonlive.gmu.edu>
+Date:   Thu Feb 18 19:18:45 2021 -0500
+
+    Update descriptive-statistics for duplicate Boolean and bar charts
+
+[33mcommit 2fefead6304719035c99bf89082b84abc07b1b3a[m
+Merge: 7ea1d4c 9fcb0f3
+Author: Anup-Upadhyaya <78397792+Anup-Upadhyaya@users.noreply.github.com>
+Date:   Thu Feb 18 19:07:10 2021 -0500
+
+    Merge pull request #11 from data-rescue/branch1
+    
+    Add anup notebook hello world
+
+[33mcommit 7ea1d4c1d8360838c312667d762119fcfc13e009[m
+Merge: 79c3ac7 d25fc1c
+Author: emclaug <emclaug@masonlive.gmu.edu>
+Date:   Thu Feb 18 19:04:44 2021 -0500
+
+    Merge pull request #12 from data-rescue/branch2
+    
+    add Elizabeth's notebook - hello gecko
+
+[33mcommit d25fc1c15420ca7c6d0d0bd09e75e7087118854d[m
+Author: elizabeth <emclaug@masonlive.gmu.edu>
+Date:   Thu Feb 18 18:52:49 2021 -0500
+
+    add Elizabeth's notebook - hello gecko
+
+[33mcommit 9fcb0f3779962e804e730b30a0e5be55d293cd6c[m[33m ([m[1;31morigin/branch1[m[33m, [m[1;32mbranch1[m[33m)[m
+Author: anup <aupadhy@masonlive.gmu.edu>
+Date:   Thu Feb 18 18:52:29 2021 -0500
+
+    Add anup notebook hello world
+
+[33mcommit 79c3ac70b57a614538d3b4de4ea7496e27282857[m[33m ([m[1;31morigin/branch2[m[33m)[m
+Merge: b998219 26402fc
+Author: jgauntt-gmu <78328117+jgauntt-gmu@users.noreply.github.com>
+Date:   Thu Feb 18 15:27:34 2021 -0500
+
+    Merge pull request #10 from data-rescue/descriptive-statistics
+    
+    Update descriptive-statistics-common to include ingest module
+
+[33mcommit 26402fc3744e0176cc105e22819acc785a79be5c[m
+Author: jgauntt-gmu <jgauntt@masonlive.gmu.edu>
+Date:   Thu Feb 18 15:23:59 2021 -0500
+
+    Updated descriptive-statistics-common to use ingest module
+
+[33mcommit 87813cf71221350cc0af0323452d1dd5b8fe871b[m
+Merge: b13e2e3 b998219
+Author: jgauntt-gmu <78328117+jgauntt-gmu@users.noreply.github.com>
+Date:   Thu Feb 18 14:58:14 2021 -0500
+
+    Merge pull request #9 from data-rescue/main
+    
+    Second attempt - pull in new env update
+
+[33mcommit b99821949585763daf332af56735f53d46b8230c[m
+Merge: 5627935 02674d4
+Author: Angel Sierra <asierra-eng@users.noreply.github.com>
+Date:   Thu Feb 18 14:57:13 2021 -0500
+
+    Merge pull request #8 from data-rescue/raw_ingest
+    
+    fix yml file extention for environment requirements
+
+[33mcommit 02674d4c4289f7b27801a90ee2e8da1d2fbb3f24[m[33m ([m[1;31morigin/raw_ingest[m[33m)[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Thu Feb 18 14:55:43 2021 -0500
+
+    fix yml file extention for environment requirements
+
+[33mcommit b13e2e317e45844a7bd7af6680f2fa048899bdea[m
+Merge: 4e40386 5627935
+Author: jgauntt-gmu <78328117+jgauntt-gmu@users.noreply.github.com>
+Date:   Thu Feb 18 14:52:55 2021 -0500
+
+    Merge pull request #7 from data-rescue/main
+    
+    Pull in environment update from main
+
+[33mcommit 562793503454d6fbd5e68e18df4d875fd4f238c2[m
+Merge: c9ba220 7e2912d
+Author: Angel Sierra <asierra-eng@users.noreply.github.com>
+Date:   Thu Feb 18 14:51:05 2021 -0500
+
+    Merge pull request #6 from data-rescue/raw_ingest
+    
+    update libraries for the environment
+
+[33mcommit 7e2912d3d4d7aab44a76f67b1f79c3556a0613de[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Thu Feb 18 14:48:21 2021 -0500
+
+    update libraries for the environment
+
+[33mcommit c9ba2204ca767e683cd9e67f69bd6de33cd22a8d[m
+Merge: 6816b67 4e40386
+Author: jgauntt-gmu <78328117+jgauntt-gmu@users.noreply.github.com>
+Date:   Thu Feb 18 12:59:28 2021 -0500
+
+    Merge pull request #5 from data-rescue/descriptive-statistics
+    
+    Add initial descriptive statistics notebooks
+
+[33mcommit 4e40386b3f941c892eaf5c5c88459e29c9685bf1[m
+Author: jgauntt-gmu <78328117+jgauntt-gmu@users.noreply.github.com>
+Date:   Thu Feb 18 12:57:58 2021 -0500
+
+    Add initial descriptive statistics notebooks
+
+[33mcommit 6816b67232f383f0b54f2798b28321ff8b3a733a[m
+Merge: 9538a07 8811b70
+Author: Angel Sierra <asierra-eng@users.noreply.github.com>
+Date:   Mon Feb 15 20:13:59 2021 -0500
+
+    Merge pull request #4 from data-rescue/raw_ingest
+    
+    Ingest Module Updates
+
+[33mcommit 8811b706c82ddca6dc5a544622c450b9c92ec61c[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Mon Feb 15 16:05:24 2021 -0500
+
+    Remove empty ingest text files used for testing purposes from the repo.
+
+[33mcommit a6b23fbc1e2560d88a35e938cd525ed4c630f3fe[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Mon Feb 15 16:01:41 2021 -0500
+
+    Add upload method to the ingest class and create module use case in Jupyter Notebooks
+
+[33mcommit 9538a0748bb78e8c8f6ead1f296cbd950d82a8c5[m
+Merge: e2d373d b64f8a6
+Author: Angel Sierra <asierra-eng@users.noreply.github.com>
+Date:   Sun Feb 14 18:27:29 2021 -0500
+
+    Merge pull request #3 from data-rescue/raw_ingest
+    
+    update virtual environment requirements
+
+[33mcommit b64f8a6a9d33ac96d8be826df453a64c11982d6a[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Sun Feb 14 18:22:52 2021 -0500
+
+    update virtual environment requirements file to include boto3 and botocore
+
+[33mcommit e2d373d7280b159e12edd21b63905cb9f12edc13[m
+Merge: 347ce2d 9a5a53c
+Author: Angel Sierra <asierra-eng@users.noreply.github.com>
+Date:   Sun Feb 14 17:56:51 2021 -0500
+
+    Merge pull request #2 from data-rescue/raw_ingest
+    
+    Remove old ingest module named raw_ingest.py
+
+[33mcommit 9a5a53cc78e0c4c84e19189a6beece9cdde2ad6b[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Sun Feb 14 17:53:29 2021 -0500
+
+    Remove old ingest module named raw_ingest.py
+
+[33mcommit 347ce2dbdf85f0881fbd73fda99799e6bc94091e[m
+Merge: 148996a 7ecd49c
+Author: Angel Sierra <asierra-eng@users.noreply.github.com>
+Date:   Sun Feb 14 17:45:15 2021 -0500
+
+    Merge pull request #1 from data-rescue/raw_ingest
+    
+    I self-bless my own code and accept it to be pulled into main. In the future, we may want to have separate team members running test codes and approving merges to main.
+
+[33mcommit 7ecd49c4c7eaaa6bf33595e2419e61cc8ab335bf[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Sun Feb 14 17:35:50 2021 -0500
+
+    Add dowload method to ingest class.
+
+[33mcommit ec9f9be6240e5ef1582bd7a777d515d107729d99[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Sat Feb 13 18:09:08 2021 -0500
+
+    Create ingest class
+
+[33mcommit 148996abee888f1f3dee66926c04e1dde2149b53[m
+Author: Angel <asierra.me@gmail.com>
+Date:   Thu Feb 11 17:31:46 2021 -0500
+
+    Create project structure
+
+[33mcommit aa4687f18a8c8ebda5a57ff359ad468d1bdfa611[m
+Author: Angel Sierra <asierra-eng@users.noreply.github.com>
+Date:   Thu Feb 11 16:19:10 2021 -0500
+
+    Initial commit
