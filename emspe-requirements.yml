@@ -95,6 +95,7 @@ dependencies:
   - markupsafe=1.1.1=py38h294d835_3
   - matplotlib=3.3.4=py38haa244fe_0
   - matplotlib-base=3.3.4=py38h34ddff4_0
+  - matplotlib-venn=0.11.6=pyh9f0ad1d_0
   - mistune=0.8.4=py38h294d835_1003
   - mkl=2020.4=hb70f87d_311
   - more-itertools=8.7.0=pyhd8ed1ab_0
@@ -185,4 +186,4 @@ dependencies:
   - zipp=3.4.0=py_0
   - zlib=1.2.11=h62dcd97_1010
   - zstd=1.4.8=h4e2f164_1
-prefix: D:\00-DevEnv\anaconda3\envs\emspe2
+prefix: D:\00-DevEnv\anaconda3\envs\emspe
