@@ -17,7 +17,8 @@ pat_i = pd.read_csv('../data/02_intermediate/dfPatients_dedup.csv')
 # Visualization Color Configuration
 # Change this parameter witha valid matplotlib parameter to
 # update appropriate graphs color.
-palette_sel_distinct = 'Dark2'
+palette_sel_distinct = ['Red','Green','Black']
+palette_sel_distinct_2 = 'Dark2'
 palette_sel_continuous = 'viridis'
 
 # remove the 2 patient outcomes that are null
@@ -31,10 +32,10 @@ df_q4 = pat_i[cols].copy(deep=True)
 df_q4.drop_duplicates(inplace=True)
 
 df_q4 = df_q4.astype(dtype={
-    #'FireStation': 'string',
-    'Shift': 'string',
-    'PatientOutcome': 'string',
-    'PatientId': 'string'
+    #'FireStation': 'str',
+    'Shift': 'str',
+    'PatientOutcome': 'str',
+    'PatientId': 'str'
 })
 
 df_q4['Shift'] = df_q4['Shift'].apply(lambda x: x.strip())
@@ -146,7 +147,7 @@ def frequency_plot_station(hue_sel):
     plt.figure(figsize=(10, 20))
     sns.countplot(y='FireStation',
                   data=df,
-                  palette=palette_sel_distinct,
+                  palette=palette_sel_distinct_2,
                   hue=hue_sel)
 
 
@@ -249,7 +250,7 @@ def violinplot(version, subset):
         ax1.set_xticks(FireStation_Key_List)
         ax1.set_xticklabels(FireStation_Val_List, visible=True)
         ax1.tick_params(labelsize=65)
-        ax1.legend(fontsize=65)
+        ax1.legend(fontsize=65, loc='lower right')
         fig.tight_layout()
 
     if version == 1:
@@ -292,3 +293,4 @@ def presentation_frequency_plot_figures(outcome):
     ax.set_title(title)
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
+    ax.legend(loc='lower right')
