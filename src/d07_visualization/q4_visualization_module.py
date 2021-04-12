@@ -20,6 +20,7 @@ pat_i = pd.read_csv('../data/02_intermediate/dfPatients_dedup.csv')
 palette_sel_distinct = ['Red','Green','Black']
 palette_sel_distinct_2 = 'Dark2'
 palette_sel_continuous = 'viridis'
+seaborn_theme = 'darkgrid'
 
 # remove the 2 patient outcomes that are null
 pat_i.drop(index=pat_i[pat_i['PatientOutcome'].isnull()].index, inplace=True)
@@ -126,7 +127,7 @@ def frequency_plot_station_outcome(subset, sel):
         df = df_q4[df_q4['PatientOutcome'].isin(cat_list)]
         plt.figure(figsize=(20, 10))
 
-    sns.set_theme(style='darkgrid')
+    sns.set_theme(style=seaborn_theme)
     sns.countplot(y=y_sel,
                   data=df,
                   hue=hue_sel,
@@ -143,7 +144,7 @@ def frequency_plot_station(hue_sel):
     if hue_sel == 'year':
         hue_sel = df['DispatchTime'].dt.year
 
-    sns.set_theme(style='darkgrid')
+    sns.set_theme(style=seaborn_theme)
     plt.figure(figsize=(10, 20))
     sns.countplot(y='FireStation',
                   data=df,
@@ -278,14 +279,14 @@ def presentation_frequency_plot_figures(outcome):
         title = 'Patient Outcome Frequency'
         y_label = 'Patient Outcome'
         y_sel = 'PatientOutcome'
-        sns.set_theme(style='darkgrid')
+        sns.set_theme(style=seaborn_theme)
     else:
         title = outcome + ' Outcome Across Fire Station and Shift'
         df = df_q4[df_q4['PatientOutcome'] == outcome].copy(deep=True)
 
     #Plot
     plt.subplots(figsize=(20, 20))
-    sns.set_theme(style='darkgrid')
+    sns.set_theme(style=seaborn_theme)
     ax = sns.countplot(data=df,
                        y=y_sel,
                        hue='Shift',
