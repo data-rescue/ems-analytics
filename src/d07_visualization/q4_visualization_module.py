@@ -126,12 +126,12 @@ def frequency_plot_station_outcome(subset, sel):
         df = df_q4[df_q4['PatientOutcome'].isin(cat_list)]
         plt.figure(figsize=(20, 10))
 
-    fig = sns.countplot(y=y_sel,
-                        data=df,
-                        hue=hue_sel,
-                        palette=palette_sel_continuous)
+    sns.set_theme(style='darkgrid')
+    sns.countplot(y=y_sel,
+                  data=df,
+                  hue=hue_sel,
+                  palette=palette_sel_continuous)
 
-    return fig
 
 
 def frequency_plot_station(hue_sel):
@@ -254,12 +254,12 @@ def violinplot(version, subset):
         fig.tight_layout()
 
     if version == 1:
-        fig = sns.violinplot(y=df['PatientOutcomeCode'],
-                             x='FireStation',
-                             data=df,
-                             scale='count',
-                             vw=.9,
-                             cut=0)
+        sns.violinplot(y=df['PatientOutcomeCode'],
+                       x='FireStation',
+                       data=df,
+                       scale='count',
+                       vw=.9,
+                       cut=0)
 
 
 def presentation_frequency_plot_figures(outcome):
@@ -278,12 +278,14 @@ def presentation_frequency_plot_figures(outcome):
         title = 'Patient Outcome Frequency'
         y_label = 'Patient Outcome'
         y_sel = 'PatientOutcome'
+        sns.set_theme(style='darkgrid')
     else:
         title = outcome + ' Outcome Across Fire Station and Shift'
         df = df_q4[df_q4['PatientOutcome'] == outcome].copy(deep=True)
 
     #Plot
     plt.subplots(figsize=(20, 20))
+    sns.set_theme(style='darkgrid')
     ax = sns.countplot(data=df,
                        y=y_sel,
                        hue='Shift',
