@@ -250,8 +250,8 @@ def violinplot(version, subset):
         ax1.set_yticklabels(PatientOutcome_Val_List, visible=True)
         ax1.set_xticks(FireStation_Key_List)
         ax1.set_xticklabels(FireStation_Val_List, visible=True)
-        ax1.tick_params(labelsize=65)
-        ax1.legend(fontsize=65, loc='lower right')
+        ax1.tick_params(labelsize=105)
+        ax1.legend(fontsize=105, loc='lower right')
         fig.tight_layout()
 
     if version == 1:
@@ -293,7 +293,8 @@ def presentation_frequency_plot_figures(outcome):
                        palette=palette_sel_distinct,
                        order=df[y_sel].value_counts().index,
                        hue_order=['A - Shift', 'B - Shift', 'C - Shift'])
-    ax.set_title(title)
-    ax.set_xlabel(x_label)
-    ax.set_ylabel(y_label)
-    ax.legend(loc='lower right')
+    ax.set_title(title, fontsize=20)
+    ax.set_xlabel(x_label, fontsize=20)
+    ax.set_ylabel(y_label, fontsize=20)
+    ax.tick_params(labelsize=20)
+    ax.legend(fontsize=20, loc='lower right')
